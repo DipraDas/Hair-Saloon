@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import AboutUs from '../AboutUs/AboutUs';
 import ArtDirector from '../ArtDirector/ArtDirector';
 import Banner from '../Banner/Banner';
@@ -12,6 +13,9 @@ import PremiumHair from '../PremiumHair/PremiumHair';
 import SendingInterest from '../SendingInterest/SendingInterest';
 
 const HomeComponents = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div>
             <Banner></Banner>
