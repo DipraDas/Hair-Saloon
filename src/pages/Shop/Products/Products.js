@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Loading from '../../../components/loading/Loading';
 import { useGetProductsQuery } from '../../../features/api/productSlice';
 import Categories from '../Categories/Categories';
@@ -74,6 +75,17 @@ const Products = () => {
                                     <div className='d-flex justify-content-between'>
                                         <div className='subtotalStyle'>Subtotal :</div>
                                         <div className='subtotalStyle'>£{subTotal}</div>
+                                    </div>
+                                }
+                                {
+                                    cartLength > 0 &&
+                                    <div style={{ color: "#fff" }} className='row gx-5 px-4 my-3'>
+                                        <div className='col-6 bg-dark py-3 text-center fw-bold border border-white'>
+                                            <Link to="/cart" className='py-2 px-2' style={{ color: "#fff", textDecoration: "none", letterSpacing: '1px' }} >View Cart</Link>
+                                        </div>
+                                        <div className='col-6 bg-dark py-3 text-center fw-bold border border-white' >
+                                            <Link to="/checkout" className='py-2 px-2' style={{ color: "#fff", textDecoration: "none", letterSpacing: '1px' }} >Checkout</Link>
+                                        </div>
                                     </div>
                                 }
                             </div>
