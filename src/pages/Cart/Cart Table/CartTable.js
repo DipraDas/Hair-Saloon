@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useRemoveProductMutation } from '../../../features/api/productSlice';
 import { removeFromCart } from '../../../features/cart/cartSlice';
 
 const CartTable = ({ cartProduct, serial }) => {
@@ -27,7 +26,7 @@ const CartTable = ({ cartProduct, serial }) => {
                 </td>
                 <td>£{price}</td>
                 <td class="quantity">
-                    <div class="input-group">
+                    <div class="input-group" >
                         <input type="text" name="quantity" class="quantity form-control input-number" value={quantity} min="1" max="100" />
                     </div>
                 </td>

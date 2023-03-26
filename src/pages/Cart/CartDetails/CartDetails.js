@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useRemoveProductMutation } from '../../../features/api/productSlice';
 import CartTable from '../Cart Table/CartTable';
 import './CartDetails.css';
 
