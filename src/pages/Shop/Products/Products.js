@@ -11,6 +11,7 @@ import './Products.css';
 
 const Products = () => {
 
+
     const [upcommingProducts, setUpcommingProducts] = useState([]);
     const [categories, setCategories] = useState([]);
 
@@ -44,7 +45,7 @@ const Products = () => {
             <div className="products py-5">
                 <div className="container">
                     <div className="row p-0 m-0">
-                        <div className='show'>Showing 1-15 of 15 results</div>
+                        {products?.length&&<div className='show'>Showing 1-{products.length} of {products.length} results</div>}
                         <div className="col-lg-9 col-md-12 px-4">
                             <div className="proContainer">
                                 {

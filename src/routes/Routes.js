@@ -8,7 +8,6 @@ import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import HomeComponents from "../pages/Home/HomeComponents/HomeComponents";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-
 import AdminRoute from "./AdminRoute";
 import PrivateRoutes from "./PrivateRoutes";
 import AddBlogs from "../pages/Dashboard/Add Blogs/AddBlogs";
@@ -19,6 +18,7 @@ import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 import MyComments from "../pages/Dashboard/MyComments/MyComments";
 import ShopComponents from "../pages/Shop/ShopComponents/ShopComponents";
 import CartComponents from "../pages/Cart/Cart Components/CartComponents";
+import CheckoutComponents from "../pages/Checkout/CheckoutComponents/CheckoutComponents";
 
 const routes = createBrowserRouter([
     {
@@ -40,6 +40,10 @@ const routes = createBrowserRouter([
             {
                 path: "/cart",
                 element: <CartComponents></CartComponents>
+            },
+            {
+                path: "/checkout",
+                element: <CheckoutComponents></CheckoutComponents>
             },
             {
                 path: "/blogs",
