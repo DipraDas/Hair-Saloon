@@ -13,10 +13,15 @@ const CheckoutForm = () => {
 
     let cart = useSelector(state => state.cart);
     let cartDetails = cart.cart;
-    const cartLength = (cart.cart.length);
-    const { user } = useContext(AuthContext);
-    const userEmail = (user.email)
 
+    const { user, logOut } = useContext(AuthContext);
+    const userEmail = user?.email;
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+    }
 
     const eachProductCost = (cartDetails.map(c => (c.price * c.quantity)));
     const subTotal = (eachProductCost.reduceRight((acc, cur) => acc + cur, 0)).toFixed(2);
@@ -55,14 +60,25 @@ const CheckoutForm = () => {
             body: JSON.stringify(orderDetails)
         })
             .then(res => res.json())
-            .then(data => Swal.fire({
-                position: 'center center',
-                icon: 'success',
-                title: 'Order Placed',
-                showConfirmButton: false,
-                timer: 2500
-            }))
-            navigate('/');
+            .then(data => {
+                data.acknowledged === true ?
+                    Swal.fire({
+                        position: 'center center',
+                        icon: 'success',
+                        title: 'Order Placed',
+                        showConfirmButton: false,
+                        timer: 2500
+                    }) :
+                    Swal.fire({
+                        position: 'center center',
+                        icon: 'warning',
+                        title: 'Please Login Again',
+                        showConfirmButton: false,
+                        timer: 3500
+                    })
+                data.acknowledged !== true && handleLogOut()
+            })
+        navigate('/');
     }
 
     return (
