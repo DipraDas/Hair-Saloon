@@ -36,7 +36,7 @@ const Header = () => {
                         </Nav>
                         <Nav className='align-items-center'>
                             {cartLength > 0 &&
-                                <FaShoppingCart style={{ fontSize: '50px', marginRight: '20px', border: '1px solid black', padding: '15px', cursor: 'pointer' }}></FaShoppingCart>
+                                <Link to="/cart"><FaShoppingCart style={{ color: "black",fontSize: '50px', marginRight: '20px', border: '1px solid black', padding: '15px', cursor: 'pointer' }}></FaShoppingCart></Link>
                             }
                             {
                                 user?.uid ?

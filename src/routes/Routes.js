@@ -18,6 +18,7 @@ import AllBlogs from "../pages/Dashboard/AllBlogs/AllBlogs";
 import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 import MyComments from "../pages/Dashboard/MyComments/MyComments";
 import ShopComponents from "../pages/Shop/ShopComponents/ShopComponents";
+import CartComponents from "../pages/Cart/Cart Components/CartComponents";
 
 const routes = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const routes = createBrowserRouter([
             {
                 path: "/shop",
                 element: <PrivateRoutes><ShopComponents></ShopComponents></PrivateRoutes>
+            },
+            {
+                path: "/cart",
+                element: <CartComponents></CartComponents>
             },
             {
                 path: "/blogs",
